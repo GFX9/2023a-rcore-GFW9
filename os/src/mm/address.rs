@@ -161,6 +161,8 @@ impl From<PhysPageNum> for PhysAddr {
 impl VirtPageNum {
     /// Get the indexes of the page table entry
     pub fn indexes(&self) -> [usize; 3] {
+        // 获取3*9, 即每一级页表的索引
+        // idx[0]存放的是根页表的索引
         let mut vpn = self.0;
         let mut idx = [0usize; 3];
         for i in (0..3).rev() {

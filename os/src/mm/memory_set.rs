@@ -349,6 +349,7 @@ impl MemorySet {
     }
 }
 /// map area structure, controls a contiguous piece of virtual memory
+// 逻辑段
 pub struct MapArea {
     vpn_range: VPNRange,
     data_frames: BTreeMap<VirtPageNum, FrameTracker>,
